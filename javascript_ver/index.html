@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <script type="text/JavaScript" src="bmi.js"></script>
+    <style>
+        .container{
+            width: 30%;
+            height: auto;
+            margin: 30px 0px 0px 500px;
+            background-color:  #d1d1e0;
+            border-radius: 10px;
+            box-shadow: 0px 5px 20px rgba(72, 72, 106, 0.5);
+        }
+        .container h2{
+            font-size: larger;
+            text-align: center;
+            padding: 30px 0px 20px 0px;
+        }
+        .container form {
+            text-align: center;
+            font-size: 18px;
+            padding-bottom: 20px;
+        }
+        .container form .slider{
+            -webkit-appearance: none;
+            appearance: none;
+            width: 50%;
+            height: 5px;
+            background: #5c5c8a;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: 0.2s;
+            transition: opacity .2s;
+            margin: 25px 40px 30px 0px;
+            
+        }
+        .container form .slider:hover{
+            opacity: 1;
+        }
+        .container form .slider::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 20px;
+            background: #3d3d5c;
+            cursor: pointer;
+        }
+        .container form .box{
+            width: 50px;
+            height: 25px;
+            outline: none;
+            border: none;
+            background-color: #b3b3cc;
+            color: #14141f;
+        }
+        .container button{
+            padding: 7px 137px; 
+            background-color: #52527a; 
+            color: white; 
+            text-align: center; 
+            border: none; 
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .container button:hover{
+            color: #14141f;
+            background-color: #8585ad;
+        }
+    </style>
+</head>
+<body >
+    <div class="container" align="center">
+        <h2>Kalkulator BMI dan Kebutuhan Air</h2>
+        <div>
+            <form>
+                Masukkan berat badan (kg) <br>
+                <input class="slider" type="range" id="berat" name="beratRange" min="0" max="150" value="" oninput="this.form.beratInput.value=this.value">
+                <input class="box" type="number" id="berat1" name="beratInput" min="0" max="150" value="" oninput="this.form.beratRange.value= this.value">
+                <br>
+                Masukkan tinggi badan (cm) <br>
+                <input class="slider" type="range" id="tinggi" name="tinggiRange" min="0" max="200" value="" oninput="this.form.tinggiInput.value=this.value">
+                <input class="box" type="number" id="tinggi1" name="tinggiInput" min="0" max="200" value="" oninput="this.form.tinggiRange.value=this.value"><br>
+            </form>
+            <div >
+                <button value="Hitung" id="hitung" onclick="bmi()"> Calculate</button><br>
+                <label id="hasil">Hasil perhitungan BMI :</label><br>
+                <label id="keterangan">Keterangan :</label><br>
+                <label id="air">Kebutuhan air dalam satu hari : </label><br><br><br><br>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
